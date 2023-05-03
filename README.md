@@ -6,12 +6,12 @@ Just a patch [`twitter`](https://github.com/sferik/twitter) for only tweet.<br/>
 ```rb
 require 'twitter/rest/v2/tweet'
 
-client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = 'YOUR_CONSUMER_KEY'
-  config.consumer_secret     = 'YOUR_CONSUMER_SECRET'
-  config.access_token        = 'YOUR_ACCESS_TOKEN'
-  config.access_token_secret = 'YOUR_ACCESS_SECRET'
-end
+client = Twitter::REST::Client.new(
+  consumer_key: 'YOUR_CONSUMER_KEY',
+  consumer_secret: 'YOUR_CONSUMER_SECRET',
+  access_token: 'YOUR_ACCESS_TOKEN',
+  access_token_secret: 'YOUR_ACCESS_SECRET'
+)
 
 # Post a tweet.
 client.tweet_v2('Yeah!')
