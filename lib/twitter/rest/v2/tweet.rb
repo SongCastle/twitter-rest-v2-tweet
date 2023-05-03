@@ -13,6 +13,8 @@ module Twitter
 end
 
 # For `Twitter::Error::Unauthorized`.
-HTTP::MimeType.register_adapter(
-  'application/problem+json', HTTP::MimeType::JSON
-)
+if defined?(HTTP)
+  HTTP::MimeType.register_adapter(
+    'application/problem+json', HTTP::MimeType::JSON
+  )
+end
